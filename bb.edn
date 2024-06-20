@@ -20,15 +20,16 @@
 
   deploy {:doc "Deploy"
           :task (do (println "Deploying")
+                    (run 'clean)
+                    (run 'cljs)
+                    (run 'jar)
                     (let [env (edn/read-string (slurp "env.edn"))]
                       (println
                        (:out (shell/sh
                               "env"
                               (str "CLOJARS_USERNAME=" (:clojars/username env))
                               (str "CLOJARS_PASSWORD=" (:clojars/password env))
-                              "clojure" "-X:deploy"
-                              ":artifact"
-                              "\"target/plotly-pyclj.jar\"")))))}
+                              "clojure" "-T:build deploy")))))}
 
   jar {:doc "Build jar"
        :task (do (println "building jar") (clojure "-T:build jar"))}}}
