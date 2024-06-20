@@ -2,6 +2,12 @@ All notable changes to this project will be documented in this file. This
 change log follows the conventions of
 [keepachangelog.com](http://keepachangelog.com/).
 
+## 0.1.9
+
+- corrected web socket creation to use location rather than localhost:8987
+- corrected/added to  build scripts
+
+
 ## 0.1.8
 
 - Update plotly and react in the UI.

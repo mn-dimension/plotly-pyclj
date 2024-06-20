@@ -25,9 +25,7 @@ In a namespace, require `plotly-pyclj.core`
 (let [plotly-config {:data [{:x [0 1] :y [0 1]}
                             {:x [0 1] :y [3 2] :type :bar}]}]
   (pc/plot plotly-config))
-```
-
-See the result on the browser.
+```the result on the browser.
 
 ## Export to static image: Kaleido
 
@@ -338,11 +336,15 @@ You will need an instance of babashka (bb) on your path.
 - You will probably need to install the npm dependencies `npm install --save`.
 - Then `shadow-cljs watch ui`.
 
+## Install Local lib
+
+- build everything and install locally `bb install`
+
 ## Release steps
 
-- Compile the clojurescript with `make release-ui`
-- Create the jar `make jar`
-- Create the `env.edn` file with the `:clojars/username` and `:clojars/password` keys and execute `make jar`.
+- Compile the clojurescript with `bb cljs`
+- Create the jar `bb jar`
+- Create the `env.edn` file with the `:clojars/username` and `:clojars/password` keys and execute `bb deploy `.
 
 ## Export documentation
 

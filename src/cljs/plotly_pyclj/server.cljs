@@ -24,7 +24,7 @@
      (ws/close-chan!)
      (reset! ws/ws-connected? nil))
    (ws/make-websocket!
-    (str "ws://localhost:" port "/ws")
+    (str "ws://" (. js/window -location.host) "/ws")
     (fn [msg]
       (let [format (or format :transit)
             parser (case format
