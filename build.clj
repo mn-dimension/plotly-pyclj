@@ -3,7 +3,7 @@
             [deps-deploy.deps-deploy :as dd]))
 
 (def lib 'io.github.mn-dimension/plotly-pyclj)
-(def version "0.1.10")
+(def version "0.1.11")
 (def class-dir "target/classes")
 (def basis (b/create-basis {:project "deps.edn" :aliases [:clj]}))
 (def jar-file (format "target/%s-%s.jar" (name lib) version))
