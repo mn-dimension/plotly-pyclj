@@ -9,6 +9,11 @@
                   slipset/deps-deploy {:mvn/version "RELEASE"}}
           :ns-default build}
 
+  :conjure {:extra-deps {nrepl/nrepl       {:mvn/version "1.0.0"}
+                         cider/cider-nrepl {:mvn/version "0.42.1"}}
+            :main-opts  ["--main" "nrepl.cmdline"
+                         "--middleware" "[cider.nrepl/cider-middleware]"
+                         "--interactive"]}
   :clj
   {:extra-paths ["src/clj"]
    :extra-deps

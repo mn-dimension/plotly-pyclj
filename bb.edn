@@ -4,6 +4,12 @@
              [babashka.process :refer [shell]]
              [clojure.edn :as edn])
 
+  conjure {:doc "Start nREPL for conjure"
+           :task  (clojure "-M:conjure:dev:clj:clj-dev")}
+
+  nrepl {:doc "Start nREPL"
+           :task  (clojure "-M:dev:clj:clj-dev")}
+
   cljs  {:doc "Compileing clojure script"
          :task (do (println "Compiling to js") (clojure "-M:cljs:cljs-build:cljs-release"))}
 
