@@ -37,7 +37,7 @@
 (defonce msg-format (reagent/cursor app-state [:msg-format]))
 
 (defn port-label [connected?]
-  [:label {:for "port" :style {:color (if connected? :green :red)}} "[v0.1.11] Backend port:"])
+  [:label {:for "port" :style {:color (if connected? :green :red)}} "[v0.1.12] Backend port:"])
 
 (defn port-input-comp []
   (let [sent? (reagent/atom false)
