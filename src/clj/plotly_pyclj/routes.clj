@@ -55,7 +55,7 @@
   (async/as-channel request websocket-callbacks))
 
 (defn home [_]
-  (-> (io/resource "public/index.html")
+  (-> (io/resource "public/pyclj.html")
       slurp
       (response/ok)
       (response/content-type "text/html")))

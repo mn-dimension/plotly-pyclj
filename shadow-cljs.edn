@@ -8,6 +8,7 @@
    :asset-path "/js"
    :modules {:main {:init-fn plotly-pyclj.server/main}}
    :release
+   ;; {:compiler-options {:output-feature-set :es6 :optimizations :simple :infer-externs :auto}
    {:output-feature-set :es6
     :infer-externs :auto
     :optimizations :advanced

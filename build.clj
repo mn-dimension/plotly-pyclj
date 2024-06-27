@@ -3,12 +3,13 @@
             [deps-deploy.deps-deploy :as dd]))
 
 (def lib 'io.github.mn-dimension/plotly-pyclj)
-(def version "0.1.12")
+(def version "0.1.17")
 (def class-dir "target/classes")
 (def basis (b/create-basis {:project "deps.edn" :aliases [:clj]}))
 (def jar-file (format "target/%s-%s.jar" (name lib) version))
 
 (defn clean [_]
+  (b/delete {:path "resources/public/js"})
   (b/delete {:path "target"}))
 
 (defn jar [_]
@@ -21,7 +22,7 @@
                 :pom-data [[:licenses
                             [:license
                              [:name "Eclipse Public License 1.0"]
-                             [:url "https://opensource.org/license/epl-1-0/"] ]]]})
+                             [:url "https://opensource.org/license/epl-1-0/"]]]]})
 
   (b/copy-dir {:src-dirs ["src/clj"
                           "src/cljc"
